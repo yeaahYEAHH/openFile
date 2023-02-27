@@ -7,6 +7,8 @@ function createWindow(){
     const mainWindow = new BrowserWindow({
         width: 700, 
         height: 500,
+        titleBarStyle: 'hidden',
+        titleBarOverlay: true,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,

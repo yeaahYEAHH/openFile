@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "elecrton": "^0.0.1-security"
+    "elecron": "^0.0.1-security",
+    "elecrton": "^0.0.1-security",
+    "electron": "^23.1.1"
   }
 }

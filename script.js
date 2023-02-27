@@ -1,31 +1,34 @@
 'use strict';
-// const path = require('path');
-// let fileSys = require('fs');
+const path = require('path'),
+  fileSys = require('fs');
 
 document.addEventListener('DOMContentLoaded', () =>{
     let btn = document.querySelector('.btn'),
-      file_1 = document.querySelector('#file'),
-      way = document.getElementById('path').text;
+      file = document.querySelectorAll('#file');
 
-    let fileName = function(input) {
-      let file = input.files[0];
-      return file.name 
+    let move = function(input) {
+      let fileName = input.files[0],
+      incorrectPath = path.resolve(fileName.name);
+      return incorrectPath.replaceAll('\\', '/')
     }
 
-    let pathFile = function(name){
-      return path.dirname(name)
-    }
-    
     btn.addEventListener('click', () => {
-      alert(way)
-      // try{
-      //   let afa = fileName(file_1)
-      //   fileSys.rename(pathFile(afa), way, err => {
+      
+      let files = Array.from(file);
+      files.forEach(function (item, index){
+        files[index] = item.value
+      })
+
+      alert(files)
+      // file.forEach(item, () => {
+      //   let correctPath = move(item)
+      //   fileSys.rename(correctPath, way, err => {
       //     if (err) throw err;
-      //   })
-      // }catch (e){
-      //   conlose.log(e.name)
-      // }
+      //       console.log('Файл успешно перемещён');
+      //     })
+      // })
+      
+      
     })
 })
 
