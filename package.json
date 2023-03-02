@@ -1,16 +1,33 @@
 {
-  "name": "asd",
+  "name": "App",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "go": "electron-packager ."
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "elecron": "^0.0.1-security",
     "elecrton": "^0.0.1-security",
-    "electron": "^23.1.1"
+    "electron": "^23.1.1",
+    "electron-builder": "^23.6.0",
+    "electron-packager": "^17.1.1"
+  },
+  "build": {
+    "appId": "qwe",
+    "productName": "TransferFile",
+    "target": "NSIS",
+    "directory": {
+      "output": "build"
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false
+    }
   }
 }
