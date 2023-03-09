@@ -1,6 +1,8 @@
 const path = require('path'),
   fileSys = require('fs');
 
+
+
 document.addEventListener('DOMContentLoaded', () =>{
   let btn = document.querySelector('.btn');
 
@@ -11,9 +13,9 @@ document.addEventListener('DOMContentLoaded', () =>{
         for (const f of files[i].files) {
           correctPath = f.path
         }
-        fileSys.copyFile(correctPath, `${way}/${fileName}`, function (err) {
+        fileSys.copyFile(correctPath, `//10.0.5.204/in/povs/radio/${fileName}`, function (err) {
           if (err) throw err;
-          console.log('File uploaded and moved!');
+            alert("Успешно перемещено")
         });
         
       }
@@ -24,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     let fileList = document.querySelectorAll('.file'),
     checkList = document.querySelectorAll('#check'),
     absolutpath = document.querySelector('#path').value.replaceAll('\\', '/');
+    console.log(absolutpath)
     console.log(path.resolve(__filename))
     move(fileList, checkList, absolutpath)
   })
